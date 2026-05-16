@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -p \"require\\('./node_modules/tailwindcss/package.json'\\).version\")",
+      "Bash(curl -s http://localhost:3001/_nuxt/app/assets/css/tailwind.css)",
+      "Bash(curl -s -o /dev/null -w \"tailwind css HTTP=%{http_code}\\\\n\" http://localhost:3001/_nuxt/@id/virtual:nuxt:tailwindcss)",
+      "Bash(curl -s \"http://localhost:3001/_nuxt/D:/htdocs/naqeebullah-portfolio/app/assets/css/tailwind.css\")",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/projects)",
+      "Bash(curl -s http://localhost:3000/projects/manda-gmbh)",
+      "Bash(curl -s http://localhost:3000/projects/does-not-exist)"
+    ]
+  }
+}
