@@ -23,7 +23,10 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Naqeeb Ullah'
+      title: 'Naqeeb Ullah',
+      link: [
+        { rel: 'icon', href: 'data:,' }
+      ]
     }
   }
 })

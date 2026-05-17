@@ -5,7 +5,7 @@
       style="background-color: #DCE7F5; background-image: linear-gradient(90deg, #DCE7F5 0%, #DBEAFE 55%, #E0E7FF 100%);"
     >
       <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-        <NuxtLink to="/" class="text-base font-semibold tracking-tight text-[#0F172A] hover:text-[#1D4ED8] transition-colors">
+        <NuxtLink to="/" class="brand-link text-base font-semibold tracking-tight">
           Naqeeb Ullah
         </NuxtLink>
         <nav>
@@ -13,22 +13,22 @@
             <li>
               <NuxtLink
                 to="/projects"
-                active-class="!text-[#2563EB] !border-[#2563EB]"
-                class="text-[#475569] hover:text-[#1D4ED8] transition-colors text-sm font-medium border-b-2 border-transparent pb-1"
+                active-class="nav-link--active"
+                class="nav-link text-sm font-medium"
               >Projects</NuxtLink>
             </li>
             <li>
               <NuxtLink
                 to="/about"
-                active-class="!text-[#2563EB] !border-[#2563EB]"
-                class="text-[#475569] hover:text-[#1D4ED8] transition-colors text-sm font-medium border-b-2 border-transparent pb-1"
+                active-class="nav-link--active"
+                class="nav-link text-sm font-medium"
               >About</NuxtLink>
             </li>
             <li>
               <NuxtLink
                 to="/contact"
-                active-class="!text-[#2563EB] !border-[#2563EB]"
-                class="text-[#475569] hover:text-[#1D4ED8] transition-colors text-sm font-medium border-b-2 border-transparent pb-1"
+                active-class="nav-link--active"
+                class="nav-link text-sm font-medium"
               >Contact</NuxtLink>
             </li>
           </ul>
@@ -56,20 +56,89 @@
               href="https://www.linkedin.com/in/ullah-naqeeb"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-[#475569] hover:text-[#1D4ED8] transition-colors"
+              class="footer-link"
             >LinkedIn</a>
-          </li>
-          <li aria-hidden="true" class="text-[#60A5FA]">·</li>
-          <li>
-            <a
-              href="https://gitlab.com/naqeebullah1"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-[#475569] hover:text-[#1D4ED8] transition-colors"
-            >GitLab</a>
           </li>
         </ul>
       </div>
     </footer>
   </div>
 </template>
+
+<style scoped>
+.brand-link {
+  color: #0F172A;
+  transition: color 320ms ease;
+}
+.brand-link:hover {
+  color: #1E40AF;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #475569;
+  padding-bottom: 0.3rem;
+  transition: color 280ms ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: 0;
+  background-image: linear-gradient(to right, #2563EB, #60A5FA);
+  border-radius: 2px;
+  transition: width 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover {
+  color: #0F172A;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link--active {
+  color: #2563EB;
+}
+.nav-link--active::after {
+  width: 100%;
+}
+
+.footer-link {
+  position: relative;
+  display: inline-block;
+  color: #475569;
+  transition: color 280ms ease;
+}
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background-color: currentColor;
+  opacity: 0;
+  transform: scaleX(0.25);
+  transform-origin: left;
+  transition: opacity 280ms ease, transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.footer-link:hover {
+  color: #1E40AF;
+}
+.footer-link:hover::after {
+  opacity: 0.55;
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-link,
+  .nav-link,
+  .nav-link::after,
+  .footer-link,
+  .footer-link::after {
+    transition: none;
+  }
+}
+</style>

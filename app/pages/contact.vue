@@ -31,14 +31,6 @@
       </div>
 
       <div>
-        <h2 class="text-sm font-medium text-slate-400 uppercase tracking-wide">GitLab</h2>
-        <a href="https://gitlab.com/naqeebullah1" target="_blank" rel="noopener noreferrer"
-          class="mt-1 block text-lg text-slate-900 hover:underline">
-          gitlab.com/naqeebullah1
-        </a>
-      </div>
-
-      <div>
         <h2 class="text-sm font-medium text-slate-400 uppercase tracking-wide">Location</h2>
         <p class="mt-1 text-lg text-slate-900">Berlin, Germany</p>
       </div>
