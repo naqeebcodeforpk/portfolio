@@ -1,0 +1,270 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1920 720"
+  width="1920"
+  height="720"
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-label="Soft abstract backend architecture banner with glass panels, database cylinders, microservice nodes and API connection lines"
+>
+  <defs>
+    <!-- Base wash: F8FAFC → E6EEF8 → DBEAFE drifting right -->
+    <linearGradient id="bgWash" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#F8FAFC" />
+      <stop offset="55%" stop-color="#EEF2FF" />
+      <stop offset="100%" stop-color="#DBEAFE" />
+    </linearGradient>
+
+    <!-- Soft blue blob for atmosphere -->
+    <radialGradient id="blobBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#60A5FA" stop-opacity="0.28" />
+      <stop offset="60%" stop-color="#60A5FA" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="blobIndigo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#1E40AF" stop-opacity="0.18" />
+      <stop offset="70%" stop-color="#1E40AF" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#1E40AF" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glass panel fill: white with low alpha -->
+    <linearGradient id="glassFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#FFFFFF" stop-opacity="0.72" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.42" />
+    </linearGradient>
+
+    <!-- Cylinder fill -->
+    <linearGradient id="cylFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#EEF2FF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Connection line gradients (fade in, fade out) -->
+    <linearGradient id="apiLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#2563EB" stop-opacity="0" />
+      <stop offset="40%"  stop-color="#2563EB" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.25" />
+    </linearGradient>
+
+    <linearGradient id="apiLineSoft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#60A5FA" stop-opacity="0" />
+      <stop offset="50%"  stop-color="#60A5FA" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#1E40AF" stop-opacity="0.25" />
+    </linearGradient>
+
+    <!-- Grid pattern (very faint) -->
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 0 40" fill="none" stroke="#B8C7DA" stroke-opacity="0.35" stroke-width="0.6" />
+    </pattern>
+
+    <!-- Mask: fade grid out on the left so text area stays clean -->
+    <linearGradient id="gridMaskGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#000000" stop-opacity="0" />
+      <stop offset="45%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.85" />
+    </linearGradient>
+    <mask id="gridMask">
+      <rect x="0" y="0" width="1920" height="720" fill="url(#gridMaskGrad)" />
+    </mask>
+
+    <!-- Soft shadow under floating panels -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" />
+      <feOffset dx="0" dy="4" result="off" />
+      <feComponentTransfer><feFuncA type="linear" slope="0.18" /></feComponentTransfer>
+      <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+
+    <!-- Blur for atmospheric blobs -->
+    <filter id="blobBlur"><feGaussianBlur stdDeviation="40" /></filter>
+  </defs>
+
+  <!-- 1) Base wash -->
+  <rect x="0" y="0" width="1920" height="720" fill="url(#bgWash)" />
+
+  <!-- 2) Atmospheric blurred blobs (right-side concentration) -->
+  <g filter="url(#blobBlur)" opacity="0.9">
+    <ellipse cx="1480" cy="220" rx="360" ry="240" fill="url(#blobBlue)" />
+    <ellipse cx="1720" cy="540" rx="320" ry="220" fill="url(#blobIndigo)" />
+    <ellipse cx="1200" cy="600" rx="260" ry="180" fill="url(#blobBlue)" />
+  </g>
+
+  <!-- 3) Faint grid, masked so left half stays clean -->
+  <g mask="url(#gridMask)">
+    <rect x="0" y="0" width="1920" height="720" fill="url(#gridPattern)" />
+  </g>
+
+  <!-- 4) Backend architecture cluster (right side) -->
+  <g>
+    <!-- ====== API CONNECTION LINES (drawn behind panels) ====== -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M 760 360 Q 980 360 1120 280 T 1500 220" stroke="url(#apiLine)" stroke-width="1.4" />
+      <path d="M 760 410 Q 1000 420 1180 480 T 1560 520" stroke="url(#apiLineSoft)" stroke-width="1.4" />
+      <path d="M 820 320 Q 1020 300 1180 260" stroke="#60A5FA" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 5" />
+      <path d="M 840 470 Q 1060 500 1260 540" stroke="#2563EB" stroke-opacity="0.30" stroke-width="1" stroke-dasharray="2 5" />
+      <!-- Node-to-node thin connectors -->
+      <path d="M 1300 220 L 1420 280 L 1560 250" stroke="#475569" stroke-opacity="0.25" stroke-width="0.8" />
+      <path d="M 1340 520 L 1480 480 L 1620 510" stroke="#475569" stroke-opacity="0.25" stroke-width="0.8" />
+    </g>
+
+    <!-- ====== GLASS PANEL 1 (large, upper-right) — service / dashboard hint ====== -->
+    <g filter="url(#softShadow)">
+      <rect x="1280" y="120" width="380" height="200" rx="14"
+            fill="url(#glassFill)" stroke="#B8C7DA" stroke-opacity="0.7" stroke-width="1" />
+      <!-- title bar -->
+      <rect x="1280" y="120" width="380" height="28" rx="14" fill="#EEF2FF" fill-opacity="0.85" />
+      <rect x="1280" y="134" width="380" height="14" fill="#EEF2FF" fill-opacity="0.85" />
+      <!-- window dots -->
+      <circle cx="1296" cy="134" r="3.2" fill="#60A5FA" fill-opacity="0.55" />
+      <circle cx="1308" cy="134" r="3.2" fill="#2563EB" fill-opacity="0.45" />
+      <circle cx="1320" cy="134" r="3.2" fill="#1E40AF" fill-opacity="0.40" />
+      <!-- faint content bars (no readable text) -->
+      <rect x="1300" y="170" width="180" height="6" rx="3" fill="#B8C7DA" fill-opacity="0.55" />
+      <rect x="1300" y="186" width="240" height="6" rx="3" fill="#B8C7DA" fill-opacity="0.40" />
+      <rect x="1300" y="202" width="140" height="6" rx="3" fill="#B8C7DA" fill-opacity="0.40" />
+      <!-- mini "chart" bars -->
+      <g fill="#2563EB" fill-opacity="0.35">
+        <rect x="1300" y="270" width="14" height="30" rx="2" />
+        <rect x="1322" y="258" width="14" height="42" rx="2" />
+        <rect x="1344" y="246" width="14" height="54" rx="2" />
+        <rect x="1366" y="234" width="14" height="66" rx="2" />
+        <rect x="1388" y="252" width="14" height="48" rx="2" />
+        <rect x="1410" y="240" width="14" height="60" rx="2" />
+      </g>
+      <!-- status dots -->
+      <circle cx="1630" cy="170" r="4" fill="#2563EB" fill-opacity="0.7" />
+      <circle cx="1612" cy="170" r="4" fill="#60A5FA" fill-opacity="0.7" />
+    </g>
+
+    <!-- ====== GLASS PANEL 2 (smaller, lower-right) — terminal hint ====== -->
+    <g filter="url(#softShadow)">
+      <rect x="1430" y="430" width="320" height="170" rx="12"
+            fill="url(#glassFill)" stroke="#B8C7DA" stroke-opacity="0.65" stroke-width="1" />
+      <rect x="1430" y="430" width="320" height="24" rx="12" fill="#DBEAFE" fill-opacity="0.85" />
+      <rect x="1430" y="442" width="320" height="12" fill="#DBEAFE" fill-opacity="0.85" />
+      <!-- prompt indicator -->
+      <path d="M 1446 478 L 1454 484 L 1446 490" fill="none" stroke="#2563EB" stroke-opacity="0.65" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+      <!-- faint line "code" -->
+      <rect x="1462" y="481" width="140" height="6" rx="2" fill="#60A5FA" fill-opacity="0.45" />
+      <rect x="1446" y="500" width="200" height="6" rx="2" fill="#B8C7DA" fill-opacity="0.55" />
+      <rect x="1446" y="516" width="160" height="6" rx="2" fill="#B8C7DA" fill-opacity="0.45" />
+      <rect x="1446" y="532" width="220" height="6" rx="2" fill="#B8C7DA" fill-opacity="0.45" />
+      <rect x="1446" y="548" width="120" height="6" rx="2" fill="#60A5FA" fill-opacity="0.40" />
+    </g>
+
+    <!-- ====== SERVER STACK (rack-like, mid-right) ====== -->
+    <g filter="url(#softShadow)">
+      <rect x="1140" y="360" width="120" height="160" rx="8"
+            fill="url(#glassFill)" stroke="#B8C7DA" stroke-opacity="0.7" stroke-width="1" />
+      <!-- rack units -->
+      <g fill="#DBEAFE" fill-opacity="0.85">
+        <rect x="1152" y="372" width="96" height="20" rx="3" />
+        <rect x="1152" y="396" width="96" height="20" rx="3" />
+        <rect x="1152" y="420" width="96" height="20" rx="3" />
+        <rect x="1152" y="444" width="96" height="20" rx="3" />
+        <rect x="1152" y="468" width="96" height="20" rx="3" />
+        <rect x="1152" y="492" width="96" height="20" rx="3" />
+      </g>
+      <!-- tiny status LEDs per row -->
+      <g>
+        <circle cx="1242" cy="382" r="2" fill="#2563EB" />
+        <circle cx="1242" cy="406" r="2" fill="#60A5FA" />
+        <circle cx="1242" cy="430" r="2" fill="#2563EB" />
+        <circle cx="1242" cy="454" r="2" fill="#60A5FA" />
+        <circle cx="1242" cy="478" r="2" fill="#2563EB" />
+        <circle cx="1242" cy="502" r="2" fill="#60A5FA" />
+      </g>
+    </g>
+
+    <!-- ====== DATABASE CYLINDER (large) ====== -->
+    <g filter="url(#softShadow)">
+      <!-- body -->
+      <path d="M 1700 230 V 360 Q 1700 384 1762 384 Q 1824 384 1824 360 V 230"
+            fill="url(#cylFill)" stroke="#B8C7DA" stroke-opacity="0.8" stroke-width="1.1" />
+      <!-- top ellipse -->
+      <ellipse cx="1762" cy="230" rx="62" ry="14"
+               fill="#EEF2FF" stroke="#B8C7DA" stroke-opacity="0.8" stroke-width="1.1" />
+      <!-- inner band ellipses (depth) -->
+      <ellipse cx="1762" cy="268" rx="62" ry="14" fill="none" stroke="#B8C7DA" stroke-opacity="0.45" stroke-width="0.9" />
+      <ellipse cx="1762" cy="306" rx="62" ry="14" fill="none" stroke="#B8C7DA" stroke-opacity="0.35" stroke-width="0.9" />
+      <!-- tiny accent -->
+      <circle cx="1742" cy="248" r="2.4" fill="#2563EB" fill-opacity="0.65" />
+    </g>
+
+    <!-- ====== DATABASE CYLINDER (small, secondary) ====== -->
+    <g filter="url(#softShadow)">
+      <path d="M 1080 560 V 640 Q 1080 656 1118 656 Q 1156 656 1156 640 V 560"
+            fill="url(#cylFill)" stroke="#B8C7DA" stroke-opacity="0.75" stroke-width="1" />
+      <ellipse cx="1118" cy="560" rx="38" ry="9"
+               fill="#EEF2FF" stroke="#B8C7DA" stroke-opacity="0.75" stroke-width="1" />
+      <ellipse cx="1118" cy="586" rx="38" ry="9" fill="none" stroke="#B8C7DA" stroke-opacity="0.4" stroke-width="0.8" />
+      <ellipse cx="1118" cy="612" rx="38" ry="9" fill="none" stroke="#B8C7DA" stroke-opacity="0.35" stroke-width="0.8" />
+    </g>
+
+    <!-- ====== CLOUD OUTLINE (top-right edge) ====== -->
+    <g opacity="0.85">
+      <path
+        d="M 1640 90
+           q -22 0 -28 18
+           q -28 -4 -34 22
+           q -22 2 -22 22
+           q 0 18 22 18
+           h 132
+           q 22 0 22 -20
+           q 0 -22 -26 -24
+           q -2 -22 -28 -22
+           q -10 -18 -38 -14 z"
+        fill="#FFFFFF" fill-opacity="0.55"
+        stroke="#60A5FA" stroke-opacity="0.55" stroke-width="1.1"
+      />
+    </g>
+
+    <!-- ====== MICROSERVICE NODES (small circles, on top of lines) ====== -->
+    <g>
+      <circle cx="1300" cy="220" r="9" fill="#FFFFFF" stroke="#2563EB" stroke-opacity="0.7" stroke-width="1.4" />
+      <circle cx="1300" cy="220" r="3.2" fill="#2563EB" fill-opacity="0.85" />
+
+      <circle cx="1420" cy="280" r="7" fill="#FFFFFF" stroke="#1E40AF" stroke-opacity="0.65" stroke-width="1.2" />
+      <circle cx="1420" cy="280" r="2.4" fill="#1E40AF" fill-opacity="0.8" />
+
+      <circle cx="1560" cy="250" r="8" fill="#FFFFFF" stroke="#60A5FA" stroke-opacity="0.85" stroke-width="1.3" />
+      <circle cx="1560" cy="250" r="2.8" fill="#60A5FA" />
+
+      <circle cx="1340" cy="520" r="8" fill="#FFFFFF" stroke="#2563EB" stroke-opacity="0.7" stroke-width="1.3" />
+      <circle cx="1340" cy="520" r="2.8" fill="#2563EB" fill-opacity="0.85" />
+
+      <circle cx="1480" cy="480" r="6" fill="#FFFFFF" stroke="#60A5FA" stroke-opacity="0.85" stroke-width="1.2" />
+      <circle cx="1480" cy="480" r="2.2" fill="#60A5FA" />
+
+      <circle cx="1620" cy="510" r="7" fill="#FFFFFF" stroke="#1E40AF" stroke-opacity="0.6" stroke-width="1.2" />
+      <circle cx="1620" cy="510" r="2.4" fill="#1E40AF" fill-opacity="0.8" />
+    </g>
+
+    <!-- ====== SYSTEM STATUS PILL (tiny, near top cluster) ====== -->
+    <g opacity="0.95">
+      <rect x="1262" y="78" width="86" height="22" rx="11"
+            fill="#FFFFFF" fill-opacity="0.85" stroke="#B8C7DA" stroke-opacity="0.7" stroke-width="0.9" />
+      <circle cx="1276" cy="89" r="3" fill="#2563EB" />
+      <rect x="1286" y="86" width="52" height="6" rx="2" fill="#475569" fill-opacity="0.45" />
+    </g>
+  </g>
+
+  <!-- 5) Very faint ambient sparkle nodes scattered to balance composition -->
+  <g fill="#60A5FA" fill-opacity="0.5">
+    <circle cx="980"  cy="180" r="1.6" />
+    <circle cx="1060" cy="120" r="1.4" />
+    <circle cx="1200" cy="640" r="1.6" />
+    <circle cx="900"  cy="560" r="1.4" />
+    <circle cx="1780" cy="120" r="1.6" />
+    <circle cx="1860" cy="380" r="1.4" />
+  </g>
+
+  <!-- 6) Subtle bottom edge fade so the banner blends into page bg #F8FAFC -->
+  <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"  stop-color="#F8FAFC" stop-opacity="0" />
+    <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.55" />
+  </linearGradient>
+  <rect x="0" y="540" width="1920" height="180" fill="url(#bottomFade)" />
+</svg>

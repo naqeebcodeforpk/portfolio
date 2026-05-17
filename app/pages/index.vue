@@ -15,24 +15,39 @@ function slugFor(project: any): string {
 
 <template>
   <div>
-    <section>
-      <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">
-        Naqeeb Ullah
-      </h1>
-      <p class="mt-4 text-lg text-slate-600">
-        Senior full-stack engineer. Berlin.
-      </p>
-      <div class="mt-8 space-y-6 text-base text-slate-700 leading-relaxed">
-        <p>
-          Eight years building production systems across healthcare, government,
-          e-commerce, and ed-tech. Backend focus — schema design, API
-          architecture, framework migrations, and replacing legacy workflows
-          with software that gets used.
-        </p>
-        <p>
-          Currently building healthcare ERP software at Zahnarztpraxis
-          Wunschlachen in Berlin.
-        </p>
+    <section
+      class="relative isolate w-screen ml-[calc(50%-50vw)] -mt-16 sm:-mt-16 pt-16 sm:pt-24 pb-14 sm:pb-24 overflow-hidden border-b border-[#B8C7DA]"
+      style="
+        background-color: #F8FAFC;
+        background-image:
+          linear-gradient(rgba(248, 250, 252, 0.45), rgba(248, 250, 252, 0.45)),
+          url('/img/hero-banner.svg');
+        background-size: cover, cover;
+        background-position: center, right center;
+        background-repeat: no-repeat, no-repeat;
+      "
+    >
+      <div class="relative max-w-5xl mx-auto px-6 sm:px-10">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-950">
+            Naqeeb Ullah
+          </h1>
+          <p class="mt-4 text-lg text-slate-700">
+            Senior full-stack engineer. Berlin.
+          </p>
+          <div class="mt-8 space-y-6 text-base text-slate-700 leading-relaxed">
+            <p>
+              Eight years building production systems across healthcare, government,
+              e-commerce, and ed-tech. Backend focus — schema design, API
+              architecture, framework migrations, and replacing legacy workflows
+              with software that gets used.
+            </p>
+            <p>
+              Currently building healthcare ERP software at Zahnarztpraxis
+              Wunschlachen in Berlin.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
