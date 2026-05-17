@@ -1,6 +1,7 @@
 ---
 title: "CRS-MIS — Crop Reporting Management Information System"
 company: "Crop Reporting Services (CRS), Government of Khyber Pakhtunkhwa, Pakistan"
+logo: "/img/logos/crs-kp.svg"
 role: "Web Developer (Solo Developer & Project Owner)"
 duration: "12/2021 – 10/2023"
 domain: "GovTech / Agriculture / Spatial Field Reporting"

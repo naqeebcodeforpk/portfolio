@@ -1,6 +1,7 @@
 ---
 title: "Custom CMS & Self-Hosted Web Plugins"
 company: "ManDa GmbH, Nürnberg, Germany"
+logo: "/img/logos/manda-gmbh.webp"
 role: "Web Developer (Minijob, 20 hrs/month)"
 duration: "05/2024 – 09/2024"
 domain: "Web Development / Custom CMS / Self-Hosted Plugins for German SMBs"

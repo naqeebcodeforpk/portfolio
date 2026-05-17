@@ -1,6 +1,7 @@
 ---
 title: "Fashion in UAE — Customization & Performance Optimization of a Multi-Vendor E-Commerce Platform"
 company: "Cyber Cloud (USA) — Remote from Pakistan"
+logo: "/img/logos/cyberclouds.png"
 role: "Software Engineer — Support Developer & Client Onboarding Lead"
 duration: "Several months (within 01/2019 – 10/2023)"
 domain: "E-Commerce / Fashion Retail (UAE market)"

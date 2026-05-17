@@ -1,6 +1,7 @@
 ---
 title: "Minority Affairs Grant Management System"
 company: "Code For Pakistan, Peshawar"
+logo: "/img/logos/code-for-pakistan.png"
 role: "Full Stack Developer — Main developer on a 2-person build"
 duration: "06/2018 – 12/2018 (6-month contract, paid)"
 domain: "GovTech — Government grant administration and beneficiary management"

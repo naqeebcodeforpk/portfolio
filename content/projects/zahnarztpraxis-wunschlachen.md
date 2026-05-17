@@ -1,6 +1,7 @@
 ---
 title: "Healthcare ERP System"
 company: "Zahnarztpraxis Wunschlachen GbR, Berlin, Germany"
+logo: "/img/logos/wunschlachen.svg"
 role: "Software Developer (Softwareentwickler)"
 duration: "09/2024 – present"
 domain: "Healthcare / Dental practice management"

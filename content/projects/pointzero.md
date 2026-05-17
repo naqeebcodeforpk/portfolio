@@ -1,6 +1,7 @@
 ---
 title: "Pointzero — Excel-to-Web Calibration Management System"
 company: "Cyber Cloud (USA) — Remote from Pakistan"
+logo: "/img/logos/cyberclouds.png"
 role: "Software Engineer — Sole developer"
 duration: "2023 (within 01/2019 – 10/2023)"
 domain: "Industrial flow-meter calibration and proving (Western Canada, regulated under Measurement Canada certification)"

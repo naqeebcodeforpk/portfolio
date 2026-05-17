@@ -1,6 +1,7 @@
 ---
 title: "Trade Management Platform — Yii → Laravel Migration"
 company: "Cyber Cloud (USA) — Remote from Pakistan"
+logo: "/img/logos/cyberclouds.png"
 role: "Software Engineer — Sole owner of the Yii → Laravel migration"
 duration: "Early 2022 (within 01/2019 – 10/2023)"
 domain: "B2B Trade Management for Canadian SMBs"

@@ -27,14 +27,8 @@ function apply() {
   rafId = null
   const el = heroRef.value
   if (!el || !pending) return
-  const { x, y } = pending
-  el.style.setProperty('--mx', `${x}%`)
-  el.style.setProperty('--my', `${y}%`)
-  const px = (x - 50) / 50
-  const py = (y - 50) / 50
-  const max = 12
-  el.style.setProperty('--bgx', `${(-px * max).toFixed(2)}px`)
-  el.style.setProperty('--bgy', `${(-py * max).toFixed(2)}px`)
+  el.style.setProperty('--mx', `${pending.x}%`)
+  el.style.setProperty('--my', `${pending.y}%`)
   el.style.setProperty('--glow-o', '1')
   pending = null
 }
@@ -54,8 +48,6 @@ function onMouseMove(e: MouseEvent) {
 function onMouseLeave() {
   const el = heroRef.value
   if (!el) return
-  el.style.setProperty('--bgx', '0px')
-  el.style.setProperty('--bgy', '0px')
   el.style.setProperty('--glow-o', '0')
 }
 
@@ -68,66 +60,94 @@ onBeforeUnmount(() => {
   <div>
     <section
       ref="heroRef"
-      class="hero-banner relative isolate w-screen ml-[calc(50%-50vw)] -mt-16 sm:-mt-16 pt-16 sm:pt-24 pb-14 sm:pb-24 overflow-hidden border-b border-[#B8C7DA]"
+      class="hero-banner relative isolate overflow-hidden rounded-[24px] border border-[#B8C7DA] shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
       @mousemove="onMouseMove"
       @mouseleave="onMouseLeave"
     >
       <div class="hero-banner__glow" aria-hidden="true"></div>
-      <div class="relative max-w-5xl mx-auto px-6 sm:px-10">
-        <div class="max-w-2xl">
-          <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-950">
+
+      <img
+        src="/img/naqeeb.png"
+        alt="Naqeeb Ullah"
+        width="80"
+        height="80"
+        loading="eager"
+        decoding="async"
+        class="absolute top-6 right-6 sm:top-8 sm:right-8 z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-white shadow-[0_6px_18px_-8px_rgba(15,23,42,0.25)]"
+      />
+
+      <div class="relative px-8 sm:px-10 py-8 sm:py-10">
+        <div class="pr-24 sm:pr-28">
+          <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#0F172A]">
             Naqeeb Ullah
           </h1>
-          <p class="mt-4 text-lg text-slate-700">
+          <p class="mt-2 text-sm text-[#475569]">
             Senior full-stack engineer. Berlin.
           </p>
-          <div class="mt-8 space-y-6 text-base text-slate-700 leading-relaxed">
-            <p>
-              Eight years building production systems across healthcare, government,
-              e-commerce, and ed-tech. Backend focus — schema design, API
-              architecture, framework migrations, and replacing legacy workflows
-              with software that gets used.
-            </p>
-            <p>
-              Currently building healthcare ERP software at Zahnarztpraxis
-              Wunschlachen in Berlin.
-            </p>
-          </div>
+        </div>
+        <div class="mt-5 space-y-3 text-[15px] text-[#334155] leading-relaxed">
+          <p>
+            Eight years building production systems across healthcare, government,
+            e-commerce, and ed-tech. Backend focus — schema design, API
+            architecture, framework migrations, and replacing legacy workflows
+            with software that gets used.
+          </p>
+          <p>
+            Currently building healthcare ERP software at Zahnarztpraxis
+            Wunschlachen in Berlin.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="mt-24">
-      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
+      <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[#0F172A]">
         Featured Projects
       </h2>
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         <NuxtLink
           v-for="project in featuredProjects"
           :key="project._path"
           :to="`/projects/${slugFor(project)}`"
-          class="block border border-slate-200 rounded-lg p-6 hover:border-slate-900 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-200"
+          class="group relative block overflow-hidden rounded-[20px] border border-[#D8E3F0] p-7 sm:p-8 transition-all duration-300 ease-out shadow-[0_1px_2px_rgba(15,23,42,0.04)] hover:-translate-y-0.5 hover:border-[#BFDBFE] hover:shadow-[0_4px_14px_-8px_rgba(37,99,235,0.10)]"
+          style="background-image: linear-gradient(180deg, #FFFFFF 0%, #F9FBFF 100%);"
         >
-          <p class="text-xs uppercase tracking-wide text-slate-400">
-            {{ project.company }}
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#BFDBFE] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+          ></span>
+
+          <p class="flex items-center gap-2.5 text-[11px] uppercase tracking-[0.14em] font-medium text-[#64748B]">
+            <span class="relative inline-flex shrink-0 items-center justify-center w-6 h-6 rounded-full bg-[#EEF4FF] border border-[#D6E4FF] text-[10px] font-semibold text-[#1E3A8A] overflow-hidden">
+              {{ (project.company || '?').charAt(0).toUpperCase() }}
+              <img
+                v-if="project.logo"
+                :src="project.logo"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </span>
+            <span class="min-w-0">{{ project.company }}</span>
           </p>
-          <h3 class="mt-1 text-lg font-semibold tracking-tight text-slate-900">
+          <h3 class="mt-3 text-lg sm:text-xl font-semibold tracking-tight text-[#0F172A] transition-colors duration-300 group-hover:text-[#1E3A8A]">
             {{ project.title }}
           </h3>
-          <p v-if="project.domain" class="text-sm text-slate-600 mt-2">
+          <p v-if="project.domain" class="mt-2.5 text-sm text-[#334155] leading-relaxed">
             {{ project.domain }}
           </p>
-          <ul v-if="project.techStack?.length" class="mt-4 flex flex-wrap gap-2">
+          <ul v-if="project.techStack?.length" class="mt-5 flex flex-wrap gap-1.5">
             <li
               v-for="tech in project.techStack.slice(0, 4)"
               :key="tech"
-              class="bg-slate-100 text-slate-700 rounded px-2 py-1 text-xs"
+              class="rounded-md border border-[#D6E4FF] bg-[#EEF4FF] px-2.5 py-1 text-[11px] font-medium text-[#1E3A8A]"
             >
               {{ tech }}
             </li>
             <li
               v-if="project.techStack.length > 4"
-              class="bg-slate-100 text-slate-700 rounded px-2 py-1 text-xs"
+              class="rounded-md border border-[#E2E8F0] bg-[#F1F5F9] px-2.5 py-1 text-[11px] font-medium text-[#64748B]"
             >
               +{{ project.techStack.length - 4 }} more
             </li>
@@ -135,9 +155,16 @@ onBeforeUnmount(() => {
         </NuxtLink>
       </div>
 
-      <p class="mt-10">
-        <NuxtLink to="/projects" class="text-slate-900 hover:text-blue-600 transition-colors">
-          View all projects &rarr;
+      <p class="mt-12">
+        <NuxtLink
+          to="/projects"
+          class="group inline-flex items-center gap-1.5 text-sm font-medium text-[#2563EB] hover:text-[#1E3A8A] transition-colors"
+        >
+          View all projects
+          <span
+            aria-hidden="true"
+            class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1"
+          >&rarr;</span>
         </NuxtLink>
       </p>
     </section>
@@ -146,17 +173,24 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .hero-banner {
-  background-color: #F8FAFC;
-  background-image:
-    linear-gradient(rgba(248, 250, 252, 0.45), rgba(248, 250, 252, 0.45)),
-    url('/img/hero-banner.svg');
-  background-size: cover, cover;
-  background-position:
-    center,
-    calc(100% + var(--bgx, 0px)) calc(50% + var(--bgy, 0px));
-  background-repeat: no-repeat, no-repeat;
-  transition: background-position 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  background-color: #E6EEF8;
+  background-image: linear-gradient(
+    135deg,
+    #E8F1FA 0%,
+    #DBEAFE 35%,
+    #E0E7FF 70%,
+    #EEF2FF 100%
+  );
+  background-size: 220% 220%;
+  background-position: 0% 50%;
+  animation: hero-gradient-drift 22s ease-in-out infinite alternate;
   will-change: background-position;
+}
+
+@keyframes hero-gradient-drift {
+  0%   { background-position: 0%   30%; }
+  50%  { background-position: 100% 70%; }
+  100% { background-position: 30%  100%; }
 }
 
 .hero-banner__glow {
@@ -176,8 +210,8 @@ onBeforeUnmount(() => {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-banner {
-    transition: none;
-    background-position: center, right center !important;
+    animation: none;
+    background-position: 50% 50% !important;
   }
   .hero-banner__glow {
     display: none;

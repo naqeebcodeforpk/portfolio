@@ -1,6 +1,7 @@
 ---
 title: "Techie Kids Club — Multi-Tenant Subscription Platform for In-School Coding Enrichment"
 company: "Cyber Cloud (USA) — Remote from Pakistan"
+logo: "/img/logos/cyberclouds.png"
 role: "Software Engineer (sole developer on the project)"
 duration: "~2022 – 2023 (within 01/2019 – 10/2023)"
 domain: "EdTech / Subscription-Based In-School Enrichment"

@@ -1,6 +1,7 @@
 ---
 title: "UberGP UK — Multi-Channel Private Telehealth Platform"
 company: "Cyber Cloud (USA) — Remote from Pakistan"
+logo: "/img/logos/cyberclouds.png"
 role: "Software Engineer — Backend & API development, collaborative team build"
 duration: "Early 2019 (within 01/2019 – 10/2023)"
 domain: "Private telehealth — at-home GP visits, on-demand consultations, prescriptions, and corporate health services"

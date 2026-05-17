@@ -25,7 +25,8 @@ export default defineNuxtConfig({
     head: {
       title: 'Naqeeb Ullah',
       link: [
-        { rel: 'icon', href: 'data:,' }
+        { rel: 'icon', href: 'data:,' },
+        { rel: 'preload', as: 'image', href: '/img/naqeeb.png' }
       ]
     }
   }

@@ -1,6 +1,7 @@
 ---
 title: "Kalista Beauty — Luxury Beauty E-Commerce Platform (WordPress → Laravel Migration)"
 company: "Cyber Cloud (USA) — Remote from Pakistan"
+logo: "/img/logos/cyberclouds.png"
 role: "Software Engineer — Full-stack contributor on a 3-developer team"
 duration: "2020 – 2021"
 domain: "Luxury beauty e-commerce"
