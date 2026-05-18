@@ -173,24 +173,24 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .hero-banner {
-  background-color: #E6EEF8;
+  background-color: #C8D2DE;
   background-image: linear-gradient(
-    135deg,
-    #E8F1FA 0%,
-    #DBEAFE 35%,
-    #E0E7FF 70%,
-    #EEF2FF 100%
+    100deg,
+    #DDE3EA 0%,
+    #CFD7E0 25%,
+    #BAC5D3 50%,
+    #A8B5C5 75%,
+    #94A3B8 100%
   );
-  background-size: 220% 220%;
+  background-size: 140% 100%;
   background-position: 0% 50%;
   animation: hero-gradient-drift 22s ease-in-out infinite alternate;
   will-change: background-position;
 }
 
 @keyframes hero-gradient-drift {
-  0%   { background-position: 0%   30%; }
-  50%  { background-position: 100% 70%; }
-  100% { background-position: 30%  100%; }
+  0%   { background-position: 0%  50%; }
+  100% { background-position: 15% 50%; }
 }
 
 .hero-banner__glow {
