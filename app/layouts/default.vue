@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col text-[#0F172A]" style="background-color: #F8FAFC;">
-    <header class="border-b border-[#B8C7DA]">
+    <header class="sticky top-0 z-50 border-b border-[#B8C7DA] bg-[#F8FAFC]/85 backdrop-blur-md backdrop-saturate-150">
       <div class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
         <NuxtLink to="/" class="brand-link text-base font-semibold tracking-tight">
           Naqeeb Ullah
