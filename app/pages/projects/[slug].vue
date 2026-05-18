@@ -289,12 +289,12 @@ onBeforeUnmount(() => {
   width: 5px;
   height: 5px;
   border-radius: 9999px;
-  background-color: #2563EB;
+  background-color: #94A3B8;
 }
 
 .project-prose :deep(blockquote) {
-  border-left: 3px solid #2563EB;
-  background-color: #F8FBFF;
+  border-left: 3px solid #94A3B8;
+  background-color: #F1F5F9;
   border-radius: 0 8px 8px 0;
   padding: 0.5rem 1rem;
   font-style: normal;
